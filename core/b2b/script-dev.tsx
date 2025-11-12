@@ -22,7 +22,7 @@ export function ScriptDev({ cartId, hostname, storeHash, channelId, token }: Dev
 
   return (
     <>
-      <Script id="b2b-react-refresh" strategy="beforeInteractive" type="module">
+      <Script id="b2b-react-refresh" strategy="beforeInteractive" type="module" crossOrigin="anonymous">
         {`
               import RefreshRuntime from '${hostname}/@react-refresh'
               RefreshRuntime.injectIntoGlobalHook(window)
@@ -38,7 +38,7 @@ export function ScriptDev({ cartId, hostname, storeHash, channelId, token }: Dev
         type="module"
       />
 
-      <Script id="b2b-config">
+      <Script id="b2b-config" crossOrigin="anonymous">
         {`
               window.B3 = {
                 setting: {
